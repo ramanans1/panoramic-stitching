@@ -1,17 +1,4 @@
-'''
-  File name: mymosaic.py
-  Author:
-  Date created:
-'''
 
-'''
-  File clarification:
-    Produce a mosaic by overlaying the pairwise aligned images to create the final mosaic image. If you want to implement
-    imwarp (or similar function) by yourself, you should apply bilinear interpolation when you copy pixel values.
-    As a bonus, you can implement smooth image blending of the final mosaic.
-    - Input img_input: M elements numpy array or list, each element is a input image.
-    - Outpuy img_mosaic: H × W × 3 matrix representing the final mosaic image.
-'''
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
@@ -26,7 +13,7 @@ from skimage.feature import plot_matches
 
 
 def mymosaic(img_input):
-  # Your Code Here
+
 
     im1 = img_input[0]
 
@@ -187,7 +174,7 @@ def mymosaic(img_input):
             ceilPixely=int(np.ceil(y_source[i]))
             floorPixelx=int(np.floor(x_source[i]))
             floorPixely=int(np.floor(y_source[i]))
-            
+
             y_1=0.5*(im1[floorPixelx,ceilPixely,:])+0.5*(im1[floorPixelx,floorPixely,:])
             y_2=0.5*(im1[ceilPixelx,ceilPixely,:])+0.5*(im1[ceilPixelx,floorPixely,:])
             x_avg=(0.5*y_1)+(0.5*y_2)

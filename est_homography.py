@@ -1,19 +1,3 @@
-'''
-  File name: est_homography.py
-  Author: Haoyuan(Steve) Zhang
-  Date created: 10/15/2017
-'''
-
-'''
-  File clarification:
-    Estimate homography for source and target image, given correspondences in source image (x, y) and target image (X, Y) respectively
-    - Input x, y: the coordinates of source correspondences
-    - Input X, Y: the coordinates of target correspondences
-      (X/Y/x/y , each is a numpy array of n x 1, n >= 4)
-
-    - Output H: the homography output which is 3 x 3
-      ([X,Y,1]^T ~ H * [x,y,1]^T)
-'''
 
 import numpy as np
 import pdb

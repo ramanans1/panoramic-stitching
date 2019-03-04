@@ -1,23 +1,8 @@
-'''
-  File name: anms.py
-  Author:
-  Date created:
-'''
 
-'''
-  File clarification:
-    Implement Adaptive Non-Maximal Suppression. The goal is to create an uniformly distributed
-    points given the number of feature desired:
-    - Input cimg: H × W matrix representing the corner metric matrix.
-    - Input max_pts: the number of corners desired.
-    - Outpuy x: N × 1 vector representing the column coordinates of corners.
-    - Output y: N × 1 vector representing the row coordinates of corners.
-    - Output rmax: suppression radius used to get max pts corners.
-'''
 import numpy as np
 from scipy.spatial import distance
 def anms(harris, max_pts):
-  # Your Code Here
+
     harris_pts=np.zeros((np.where(harris>0)[0].shape[0],2)).astype(np.int32)
     harris_pts[:,0]=np.where(harris>0)[0].reshape(-1).astype(np.int32)
     harris_pts[:,1]=np.where(harris>0)[1].reshape(-1).astype(np.int32)
